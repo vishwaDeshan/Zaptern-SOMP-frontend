@@ -2,7 +2,7 @@
   "name": "Zaptern-SOMP-frontend",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "app",
+  "prefix": "somp",
   "sourceRoot": "apps/Zaptern-SOMP-frontend/src",
   "tags": [],
   "targets": {
