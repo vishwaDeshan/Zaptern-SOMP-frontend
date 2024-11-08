@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { StudentListComponent } from '@zaptern-somp-frontend/student-list';
 
 export const appRoutes: Routes = [
   {
