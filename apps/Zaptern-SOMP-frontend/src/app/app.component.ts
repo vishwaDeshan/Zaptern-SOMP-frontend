@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { StudentListComponent } from '@zaptern-somp-frontend/student-list';
 import { SideBarComponent } from 'libs/shared/components/side-bar/side-bar.component';
-import { NavBarComponent } from 'libs/shared/components/main-nav/main-nav.component';
+import { ToolTopBarComponent } from 'libs/shared/components/top-tool-bar/top-tool-bar.component';
 
 @Component({
   standalone: true,
@@ -12,7 +12,7 @@ import { NavBarComponent } from 'libs/shared/components/main-nav/main-nav.compon
     RouterModule,
     StudentListComponent,
     SideBarComponent,
-    NavBarComponent,
+    ToolTopBarComponent
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
