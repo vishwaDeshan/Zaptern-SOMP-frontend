@@ -1,0 +1,50 @@
+[
+    {
+        "applicantId": "4fdd1509-2aef-08dd-5b4d-3f0664c58b74",
+        "nationalId": "992345678V",
+        "homeAddress": "No. 25, Galle Road",
+        "homeCity": "Colombo",
+        "phoneNumber": "0771234567",
+        "landLine": "0112345678"
+    },
+    {
+        "applicantId": "58eba1b8-2aef-08dd-4cf7-078e24823423",
+        "nationalId": "200345678V",
+        "homeAddress": "No. 15, Temple Road",
+        "homeCity": "Kandy",
+        "phoneNumber": "0712345678",
+        "landLine": "0812233445"
+    },
+    {
+        "applicantId": "5f81985f-2aef-08dd-f7b0-fbfe1224ca2f",
+        "nationalId": "973456789V",
+        "homeAddress": "No. 45, Station Lane",
+        "homeCity": "Galle",
+        "phoneNumber": "0779876543",
+        "landLine": "0912233445"
+    },
+    {
+        "applicantId": "654b36ed-2aef-08dd-6e4b-e762ee93cd30",
+        "nationalId": "850123456V",
+        "homeAddress": "No. 10, Main Street",
+        "homeCity": "Jaffna",
+        "phoneNumber": "0723456789",
+        "landLine": "0212233445"
+    },
+    {
+        "applicantId": "6a6771cf-2aef-08dd-7b9f-eb8de227a613",
+        "nationalId": "960987654V",
+        "homeAddress": "No. 5, Lake View Road",
+        "homeCity": "Nuwara Eliya",
+        "phoneNumber": "0781234567",
+        "landLine": "0522233445"
+    },
+    {
+        "applicantId": "6f5f245a-2aef-08dd-14ac-95c6a2450b73",
+        "nationalId": "911234567V",
+        "homeAddress": "No. 23, Market Street",
+        "homeCity": "Anuradhapura",
+        "phoneNumber": "0758765432",
+        "landLine": "0252233445"
+    }
+]

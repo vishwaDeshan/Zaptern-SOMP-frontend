@@ -15,6 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@zaptern-somp-frontend/applicants-list": [
+        "libs/applicants-list/src/index.ts"
+      ],
       "@zaptern-somp-frontend/student-list": ["libs/student-list/src/index.ts"]
     }
   },
