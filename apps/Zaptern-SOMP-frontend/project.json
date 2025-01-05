@@ -20,6 +20,11 @@
           {
             "glob": "**/*",
             "input": "apps/Zaptern-SOMP-frontend/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "apps/Zaptern-SOMP-frontend/src/assets",
+            "output": "/assets"
           }
         ],
         "styles": [
