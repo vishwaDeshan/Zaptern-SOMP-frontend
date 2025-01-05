@@ -11,8 +11,8 @@ export const appRoutes: Routes = [
   {
     path: 'personal-details',
     loadComponent: () =>
-      import('@zaptern-somp-frontend/applicants-list').then(
-        (m) => m.ApplicantsListComponent
+      import('@zaptern-somp-frontend/feature').then(
+        (m) => m.PersonalDetailsComponent
       ),
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },

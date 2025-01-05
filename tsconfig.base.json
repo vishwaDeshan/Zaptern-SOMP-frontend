@@ -18,8 +18,16 @@
       "@zaptern-somp-frontend/applicants-list": [
         "libs/applicants-list/src/index.ts"
       ],
+      "@zaptern-somp-frontend/data-access": [
+        "libs/somp-portal/data-access/src/index.ts"
+      ],
+      "@zaptern-somp-frontend/feature": [
+        "libs/somp-portal/feature/src/index.ts"
+      ],
+      "@zaptern-somp-frontend/model": ["libs/somp-portal/model/src/index.ts"],
       "@zaptern-somp-frontend/services": ["libs/shared/services/src/index.ts"],
-      "@zaptern-somp-frontend/student-list": ["libs/student-list/src/index.ts"]
+      "@zaptern-somp-frontend/student-list": ["libs/student-list/src/index.ts"],
+      "@zaptern-somp-frontend/utill": ["libs/somp-portal/utill/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
