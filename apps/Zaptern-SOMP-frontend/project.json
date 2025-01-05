@@ -33,15 +33,15 @@
           }
         ],
         "styles": [
-              "libs/shared/ui-styles/variables.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "apps/Zaptern-SOMP-frontend/src/styles.scss"
-            ],
+          "libs/shared/ui/src/lib/ui-styles/",
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "apps/Zaptern-SOMP-frontend/src/styles.scss"
+        ],
         "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/ui-styles"
-              ]
-            },
+          "includePaths": [
+            "libs/shared/ui/src/lib/ui-styles"
+          ]
+        },
         "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
       },
       "configurations": {
