@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { NavService } from '@zaptern-somp-frontend/services';
 import { Router, RouterModule } from '@angular/router';
 
-
 @Component({
   selector: 'somp-Side-bar',
   standalone: true,
@@ -14,7 +13,7 @@ import { Router, RouterModule } from '@angular/router';
 export class SideBarComponent {
   title = 'Main Side Bar';
   logoImage = 'assets/Zaptern.png';
-  menuItems: Array<{ label: string; link: string }> = [];
+  menuItems: Array<{ label: string; link: string; icon: string }> = [];
 
   constructor(private navService: NavService, private router: Router) {}
 

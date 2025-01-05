@@ -14,7 +14,10 @@
       [routerLink]="item.link"
       routerLinkActive="active"
     >
-      {{ item.label }}
+      <div>
+        <img [src]="'/assets/icons/' + item.icon" class="nav-item-icon" />
+      </div>
+      <div>{{ item.label }}</div>
     </div>
   </ul>
 </div>
