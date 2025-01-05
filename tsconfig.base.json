@@ -27,6 +27,7 @@
       "@zaptern-somp-frontend/model": ["libs/somp-portal/model/src/index.ts"],
       "@zaptern-somp-frontend/services": ["libs/shared/services/src/index.ts"],
       "@zaptern-somp-frontend/student-list": ["libs/student-list/src/index.ts"],
+      "@zaptern-somp-frontend/ui": ["libs/shared/ui/src/index.ts"],
       "@zaptern-somp-frontend/utill": ["libs/somp-portal/utill/src/index.ts"]
     }
   },

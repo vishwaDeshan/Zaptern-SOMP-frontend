@@ -14,10 +14,8 @@
       [routerLink]="item.link"
       routerLinkActive="active"
     >
-      <div>
-        <img [src]="'/assets/icons/' + item.icon" class="nav-item-icon" />
-      </div>
-      <div>{{ item.label }}</div>
+      <img [src]="'/assets/icons/' + item.icon" class="nav-item-icon" />
+      {{ item.label }}
     </div>
   </ul>
 </div>

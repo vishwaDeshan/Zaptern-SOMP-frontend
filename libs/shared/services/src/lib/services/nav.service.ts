@@ -37,7 +37,6 @@ export class NavService {
     return this.menuItems;
   }
 
-  // For future work
   setMenuItems(
     menuItems: Array<{ label: string; link: string; icon: string }>
   ): void {

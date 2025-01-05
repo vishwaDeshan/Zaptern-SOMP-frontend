@@ -5,7 +5,7 @@ import { ToolTopBarComponent } from 'libs/shared/components/top-tool-bar/top-too
 
 @Component({
   standalone: true,
-  imports: [RouterModule, SideBarComponent, ToolTopBarComponent],
+  imports: [RouterModule, ToolTopBarComponent, SideBarComponent],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

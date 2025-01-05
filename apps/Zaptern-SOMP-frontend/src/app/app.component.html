@@ -1,13 +1,13 @@
 <div class="main-layout" [class.no-sidebar]="!isSidebarVisible">
-    <div class="sidebar">
-        <somp-Side-bar></somp-Side-bar>
+  <div class="sidebar">
+    <somp-Side-bar></somp-Side-bar>
+  </div>
+  <div class="main-content">
+    <div>
+      <somp-tool-top-bar></somp-tool-top-bar>
     </div>
-    <div class="main-content">
-        <div>
-            <somp-tool-top-bar></somp-tool-top-bar>
-        </div>
-        <div class="content-area">
-            <router-outlet></router-outlet>
-        </div>
+    <div class="content-area">
+      <router-outlet></router-outlet>
     </div>
+  </div>
 </div>
