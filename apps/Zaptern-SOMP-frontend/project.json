@@ -33,7 +33,6 @@
           }
         ],
         "styles": [
-          "libs/shared/ui/src/lib/ui-styles/",
           "node_modules/bootstrap/dist/css/bootstrap.min.css",
           "apps/Zaptern-SOMP-frontend/src/styles.scss"
         ],
