@@ -22,8 +22,16 @@
             "input": "apps/Zaptern-SOMP-frontend/public"
           }
         ],
-        "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css",
-                   "apps/Zaptern-SOMP-frontend/src/styles.scss"],
+        "styles": [
+              "libs/shared/ui-styles/variables.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "apps/Zaptern-SOMP-frontend/src/styles.scss"
+            ],
+        "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/shared/ui-styles"
+              ]
+            },
         "scripts": ["node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
       },
       "configurations": {

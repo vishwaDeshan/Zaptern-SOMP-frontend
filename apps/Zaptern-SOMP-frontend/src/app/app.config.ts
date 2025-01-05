@@ -20,15 +20,16 @@ import { ApplicantEffects } from '../../../../libs/applicants-list/src/lib/appli
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
-    provideHttpClient(), // Ensure this is present to enable HTTP requests
+    provideHttpClient(),
     provideRouter(
       appRoutes,
       withEnabledBlockingInitialNavigation(),
       withComponentInputBinding()
     ),
     provideStore(),
-    provideState({ name: 'applicant', reducer: applicantReducer }), // Register applicant state
-    provideEffects([ApplicantEffects]), // Register applicant effects
+    provideState({ name: 'applicant', reducer: applicantReducer }),
+    provideState(navbarFeature),
+    provideEffects([ApplicantEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
