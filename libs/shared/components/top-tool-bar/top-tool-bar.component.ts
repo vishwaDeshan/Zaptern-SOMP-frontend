@@ -15,10 +15,10 @@ export class ToolTopBarComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    this.showSaveStatus('Saved', new Date());
+    this.showSaveStatus('Last Saved', new Date());
   }
 
   showSaveStatus(status: string, timestamp: Date): void {
-    this.saveStatus = `${status} on ${timestamp.toLocaleDateString()} at ${timestamp.toLocaleTimeString()}`;
+    this.saveStatus = `${status} at ${timestamp.toLocaleTimeString()}`;
   }
 }
