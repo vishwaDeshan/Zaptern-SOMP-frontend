@@ -1,1 +1,48 @@
-<p>personal details works</p>
+<somp-form-container>
+  <form [formGroup]="personalDetailsForm">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="firstName"
+            placeholder="First Name"
+            formControlName="firstName"
+          />
+          <label for="firstName"
+            >First Name<span class="text-danger">*</span></label
+          >
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="middleName"
+            placeholder="Middle Name"
+            formControlName="middleName"
+          />
+          <label for="middleName">Middle Name</label>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="lastName"
+            placeholder="Last Name"
+            formControlName="lastName"
+          />
+          <label for="lastName"
+            >Last Name<span class="text-danger">*</span></label
+          >
+        </div>
+      </div>
+    </div>
+  </form>
+</somp-form-container>
