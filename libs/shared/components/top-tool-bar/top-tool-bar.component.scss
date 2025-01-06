@@ -1,3 +1,42 @@
-.top-tool-bar{
-    
-}
+@import '../../ui/src/lib/ui-styles/base.scss'; // imported temporarily
+
+.tool-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: $background-color;
+    border-bottom: 1px solid $border-color;
+  
+    .left-section {
+      display: flex;
+      flex-direction: column;
+  
+      h1 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: bold;
+        color: $primary-color;
+      }
+  
+      p {
+        margin: 5px 0 0;
+        font-size: 14px;
+        color: $tertiary-color;
+      }
+    }
+  
+    .right-section {
+      .user-icon {
+        width: 32px !important;
+        height: 32px !important;
+        color: $tertiary-color;
+        cursor: pointer;
+  
+        &:hover {
+        color: $primary-color;
+        }
+      }
+    }
+  }
+  

@@ -27,7 +27,7 @@ export class NavService {
     },
     { label: 'Health Records', link: '/health-info', icon: 'health.svg' },
     {
-      label: 'Comprehensive Information Overview',
+      label: 'Information Overview',
       link: '/info-summary',
       icon: 'overview.svg',
     },
