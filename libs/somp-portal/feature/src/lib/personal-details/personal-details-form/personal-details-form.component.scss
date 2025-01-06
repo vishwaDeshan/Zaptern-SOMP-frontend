@@ -1,0 +1,7 @@
+.custom-textarea {
+    height: 100px; 
+    &:focus {
+    border-color: rgba(10, 48, 99);
+    box-shadow: 0 0 0 0.22rem rgba(10, 48, 99, 0.3);
+    }
+}

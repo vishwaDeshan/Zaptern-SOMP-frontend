@@ -7,10 +7,12 @@ export interface PersonalDetails {
   pronouns: string;
   dateOfBirth: string;
   phoneNumber: string;
+  landline?: string;
   email: string;
   nationalId: string;
   nationality: string;
   street: string;
+  city: string;
   zipCode: string;
   hobbies?: string;
   otherHobbies?: string;

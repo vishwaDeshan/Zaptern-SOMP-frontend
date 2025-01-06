@@ -1,6 +1,6 @@
 <somp-form-container>
   <form [formGroup]="personalDetailsForm!" *ngIf="personalDetailsForm">
-    <div class="row">
+    <div class="row mt-1">
       <div class="col-md-4">
         <div class="form-floating">
           <input
@@ -58,6 +58,302 @@
           >
           <div *ngIf="errorMsgs['lastName']" class="text-danger">
             {{ errorMsgs['lastName'] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-7">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="gender"
+            placeholder="Gender"
+            formControlName="gender"
+            [ngClass]="{
+              'is-invalid': errorMsgs['gender']
+            }"
+          />
+          <label for="gender"
+            >Gender<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['gender']" class="text-danger">
+            {{ errorMsgs['gender'] }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="pronouns"
+            placeholder="Pronoun"
+            formControlName="middleName"
+            [ngClass]="{
+              'is-invalid': errorMsgs['pronouns']
+            }"
+          />
+          <label for="pronouns"
+            >Pronoun<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['pronouns']" class="text-danger">
+            {{ errorMsgs['pronouns'] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="birthday"
+            placeholder="Birtday"
+            formControlName="birthday"
+            [ngClass]="{
+              'is-invalid': errorMsgs['birthday']
+            }"
+          />
+          <label for="birthday"
+            >Birthday<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['birthday']" class="text-danger">
+            {{ errorMsgs['birthday'] }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            placeholder="Email"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid': errorMsgs['email']
+            }"
+          />
+          <label for="email"
+            >Email<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['email']" class="text-danger">
+            {{ errorMsgs['email'] }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="nationalId"
+            placeholder="National ID"
+            formControlName="nationalId"
+            [ngClass]="{
+              'is-invalid': errorMsgs['nationalId']
+            }"
+          />
+          <label for="nationalId"
+            >National ID<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['nationalId']" class="text-danger">
+            {{ errorMsgs['nationalId'] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="nationality"
+            placeholder="Nationality"
+            formControlName="nationality"
+            [ngClass]="{
+              'is-invalid': errorMsgs['nationality']
+            }"
+          />
+          <label for="nationality"
+            >Nationality<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['nationality']" class="text-danger">
+            {{ errorMsgs['nationality'] }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNumber"
+            placeholder="Phone Number"
+            formControlName="phoneNumber"
+            [ngClass]="{
+              'is-invalid': errorMsgs['phoneNumber']
+            }"
+          />
+          <label for="phoneNumber"
+            >Phone Number<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['phoneNumber']" class="text-danger">
+            {{ errorMsgs['phoneNumber'] }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="landline"
+            placeholder="Land Line Number"
+            formControlName="landline"
+            [ngClass]="{
+              'is-invalid': errorMsgs['landline']
+            }"
+          />
+          <label for="landline">Land Line Number</label>
+          <div *ngIf="errorMsgs['landline']" class="text-danger">
+            {{ errorMsgs['landline'] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="street"
+            placeholder="Street"
+            formControlName="street"
+            [ngClass]="{
+              'is-invalid': errorMsgs['street']
+            }"
+          />
+          <label for="street"
+            >Street<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['street']" class="text-danger">
+            {{ errorMsgs['street'] }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="city"
+            placeholder="City"
+            formControlName="city"
+            [ngClass]="{
+              'is-invalid': errorMsgs['city']
+            }"
+          />
+          <label for="city"
+            >City<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['city']" class="text-danger">
+            {{ errorMsgs['city'] }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="zip"
+            placeholder="Zip Code"
+            formControlName="zip"
+            [ngClass]="{
+              'is-invalid': errorMsgs['zip']
+            }"
+          />
+          <label for="zip"
+            >Zip Code<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['zip']" class="text-danger">
+            {{ errorMsgs['zip'] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="hobbies"
+            placeholder="Hobbies"
+            formControlName="hobbies"
+            [ngClass]="{
+              'is-invalid': errorMsgs['hobbies']
+            }"
+          />
+          <label for="hobbies"
+            >Hobbies<span class="text-danger"><b>*</b></span></label
+          >
+          <div *ngIf="errorMsgs['hobbies']" class="text-danger">
+            {{ errorMsgs['hobbies'] }}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            id="otherHobbies"
+            placeholder="Other Hobbies"
+            formControlName="otherHobbies"
+            [ngClass]="{
+              'is-invalid': errorMsgs['otherHobbies']
+            }"
+          />
+          <label for="otherHobbies">Other Hobbies</label>
+          <div *ngIf="errorMsgs['otherHobbies']" class="text-danger">
+            {{ errorMsgs['otherHobbies'] }}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col-md-12">
+        <div class="form-floating">
+          <textarea
+            class="form-control custom-textarea"
+            id="anyComments"
+            placeholder="Any Comments"
+            formControlName="anyComments"
+            [ngClass]="{
+              'is-invalid': errorMsgs['anyComments']
+            }"
+            rows="6"
+          ></textarea>
+          <label for="anyComments">Any Comments</label>
+          <div *ngIf="errorMsgs['anyComments']" class="text-danger">
+            {{ errorMsgs['anyComments'] }}
           </div>
         </div>
       </div>

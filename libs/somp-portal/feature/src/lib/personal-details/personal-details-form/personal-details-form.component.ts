@@ -56,6 +56,10 @@ export class PersonalDetailsFormComponent implements OnInit {
         required: 'Phone number is required.',
         pattern: 'Please enter a valide phone number.',
       },
+      landline: {
+        required: 'Phone number is required.',
+        pattern: 'Please enter a valide phone number.',
+      },
       email: {
         required: 'Email is required.',
         pattern: 'Please enter a valid email address.',
@@ -69,8 +73,13 @@ export class PersonalDetailsFormComponent implements OnInit {
         pattern: 'Please select a valid nationality',
       },
       street: {
-        required: 'Street is reuired',
+        required: 'Street is required',
         maxlength: 'Street cannot exceed 100 characters.',
+        pattern: 'Please use only letters, numbers and special characters.',
+      },
+      city: {
+        required: 'City is required',
+        maxlength: 'City cannot exceed 100 characters.',
         pattern: 'Please use only letters, numbers and special characters.',
       },
       zipCode: {
@@ -80,6 +89,11 @@ export class PersonalDetailsFormComponent implements OnInit {
       },
       hobbies: {},
       otherHobbies: {
+        maxlenght: 'Other hobbies cannot exceed 20 characters.',
+        pattern: 'Please use only letters, numbers and special characters.',
+      },
+      anyComments: {
+        maxlenght: 'Any comments cannot exceed 100 characters.',
         pattern: 'Please use only letters, numbers and special characters.',
       },
     };
@@ -122,7 +136,11 @@ export class PersonalDetailsFormComponent implements OnInit {
       ],
       phoneNumber: [
         '',
-        [Validators.required, Validators.pattern(onlyAlphabeticCharsRegex)], //change
+        [Validators.pattern(onlyAlphabeticCharsRegex)], //change
+      ],
+      landline: [
+        '',
+        [Validators.pattern(onlyAlphabeticCharsRegex)], //change
       ],
       email: [
         '',
@@ -144,6 +162,14 @@ export class PersonalDetailsFormComponent implements OnInit {
           Validators.pattern(onlyAlphabeticCharsRegex),
         ], //change
       ],
+      city: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(100),
+          Validators.pattern(onlyAlphabeticCharsRegex),
+        ], //change
+      ],
       zipCode: [
         '',
         [
@@ -156,6 +182,14 @@ export class PersonalDetailsFormComponent implements OnInit {
       otherHobbies: [
         '',
         [
+          Validators.maxLength(20),
+          Validators.pattern(onlyAlphabeticCharsRegex), //change
+        ],
+      ],
+      anyComments: [
+        '',
+        [
+          Validators.maxLength(100),
           Validators.pattern(onlyAlphabeticCharsRegex), //change
         ],
       ],
