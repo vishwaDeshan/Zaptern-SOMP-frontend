@@ -17,7 +17,6 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { navbarFeature } from '../../../../libs/common/data-access/+state/navigation/nav-bar.selectors';
 import { applicantReducer } from '../../../../libs/applicants-list/src/lib/applicants-list/data-access/+state/applicant-list.reducers';
 import { ApplicantEffects } from '../../../../libs/applicants-list/src/lib/applicants-list/data-access/+state/applicant-list.effects';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -33,6 +32,5 @@ export const appConfig: ApplicationConfig = {
     provideState(navbarFeature),
     provideEffects([ApplicantEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
-    importProvidersFrom(NgbModule),
   ],
 };
