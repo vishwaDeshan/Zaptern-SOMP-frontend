@@ -109,10 +109,7 @@ export class AutoSavableFormComponent
   }
 
   ngAfterContentChecked(): void {
-    if (
-      this.onFormLoadValidationsTriggered &&
-      this.router.url.includes('family-info')
-    ) {
+    if (this.onFormLoadValidationsTriggered) {
       this.form.markAllAsTouched();
     }
   }
