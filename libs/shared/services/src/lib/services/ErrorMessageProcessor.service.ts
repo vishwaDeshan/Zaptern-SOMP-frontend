@@ -1,17 +1,13 @@
 import { FormGroup } from '@angular/forms';
 
 export class FormValidator {
-  static intValidator(validationMessages: {
-    [key: string]: { [key: string]: string };
-  }): ErrorMessageProcessor {
+  static intValidator(validationMessages: { [key: string]: { [key: string]: string } }): ErrorMessageProcessor {
     return new ErrorMessageProcessor(validationMessages);
   }
 }
 
 export class ErrorMessageProcessor {
-  constructor(
-    private validationMessages: { [key: string]: { [key: string]: string } }
-  ) {}
+  constructor(private validationMessages: { [key: string]: { [key: string]: string } }) {}
 
   processMessages(form: FormGroup): { [key: string]: string } {
     const messages: { [key: string]: string } = {};

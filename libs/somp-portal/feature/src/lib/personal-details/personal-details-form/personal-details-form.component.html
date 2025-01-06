@@ -14,7 +14,7 @@
             }"
           />
           <label for="firstName"
-            >First Name<span class="text-danger">*</span></label
+            >First Name<span class="text-danger"><b>*</b></span></label
           >
           <div *ngIf="errorMsgs['firstName']" class="text-danger">
             {{ errorMsgs['firstName'] }}
@@ -54,7 +54,7 @@
             }"
           />
           <label for="lastName"
-            >Last Name<span class="text-danger">*</span></label
+            >Last Name<span class="text-danger"><b>*</b></span></label
           >
           <div *ngIf="errorMsgs['lastName']" class="text-danger">
             {{ errorMsgs['lastName'] }}

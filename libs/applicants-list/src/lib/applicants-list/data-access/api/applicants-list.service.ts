@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { environment } from '../../../../../../../apps/Zaptern-SOMP-frontend/src/environments/environment';
+import { environment } from 'apps/Zaptern-SOMP-frontend/src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
