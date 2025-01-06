@@ -1,5 +1,5 @@
 <somp-form-container>
-  <form [formGroup]="personalDetailsForm">
+  <form [formGroup]="personalDetailsForm!" *ngIf="personalDetailsForm">
     <div class="row">
       <div class="col-md-4">
         <div class="form-floating">
@@ -9,10 +9,16 @@
             id="firstName"
             placeholder="First Name"
             formControlName="firstName"
+            [ngClass]="{
+              'is-invalid': errorMsgs['firstName']
+            }"
           />
           <label for="firstName"
             >First Name<span class="text-danger">*</span></label
           >
+          <div *ngIf="errorMsgs['firstName']" class="text-danger">
+            {{ errorMsgs['firstName'] }}
+          </div>
         </div>
       </div>
 
@@ -24,8 +30,14 @@
             id="middleName"
             placeholder="Middle Name"
             formControlName="middleName"
+            [ngClass]="{
+              'is-invalid': errorMsgs['middleName']
+            }"
           />
           <label for="middleName">Middle Name</label>
+          <div *ngIf="errorMsgs['middleName']" class="text-danger">
+            {{ errorMsgs['middleName'] }}
+          </div>
         </div>
       </div>
 
@@ -37,10 +49,16 @@
             id="lastName"
             placeholder="Last Name"
             formControlName="lastName"
+            [ngClass]="{
+              'is-invalid': errorMsgs['lastName']
+            }"
           />
           <label for="lastName"
             >Last Name<span class="text-danger">*</span></label
           >
+          <div *ngIf="errorMsgs['lastName']" class="text-danger">
+            {{ errorMsgs['lastName'] }}
+          </div>
         </div>
       </div>
     </div>
