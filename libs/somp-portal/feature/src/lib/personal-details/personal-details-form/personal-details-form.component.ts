@@ -46,10 +46,10 @@ export class PersonalDetailsFormComponent implements OnInit {
         required: 'Gender is required.',
       },
       pronouns: {
-        required: 'Pronouns is required.',
+        required: 'Pronoun is required.',
       },
       dateOfBirth: {
-        required: 'Date of birth is required.',
+        required: 'Date of Birthday is required.',
         pattern: 'Please enter valid date.',
       },
       phoneNumber: {
@@ -82,12 +82,14 @@ export class PersonalDetailsFormComponent implements OnInit {
         maxlength: 'City cannot exceed 100 characters.',
         pattern: 'Please use only letters, numbers and special characters.',
       },
-      zipCode: {
+      zip: {
         requied: 'ZIP code is required',
         maxlenght: 'ZIP code cannot exceed 5 characters.',
         pattern: 'Please use only numbers.',
       },
-      hobbies: {},
+      hobbies: {
+        required: 'Hobbies is required.',
+      },
       otherHobbies: {
         maxlenght: 'Other hobbies cannot exceed 20 characters.',
         pattern: 'Please use only letters, numbers and special characters.',
@@ -136,7 +138,7 @@ export class PersonalDetailsFormComponent implements OnInit {
       ],
       phoneNumber: [
         '',
-        [Validators.pattern(onlyAlphabeticCharsRegex)], //change
+        [Validators.required, Validators.pattern(onlyAlphabeticCharsRegex)], //change
       ],
       landline: [
         '',
@@ -170,7 +172,7 @@ export class PersonalDetailsFormComponent implements OnInit {
           Validators.pattern(onlyAlphabeticCharsRegex),
         ], //change
       ],
-      zipCode: [
+      zip: [
         '',
         [
           Validators.required,
@@ -178,7 +180,7 @@ export class PersonalDetailsFormComponent implements OnInit {
           Validators.pattern(onlyAlphabeticCharsRegex),
         ], //change
       ],
-      hobbies: ['', []],
+      hobbies: ['', [Validators.required]],
       otherHobbies: [
         '',
         [

@@ -92,7 +92,7 @@
             class="form-control"
             id="pronouns"
             placeholder="Pronoun"
-            formControlName="middleName"
+            formControlName="pronouns"
             [ngClass]="{
               'is-invalid': errorMsgs['pronouns']
             }"
@@ -113,18 +113,18 @@
           <input
             type="text"
             class="form-control"
-            id="birthday"
-            placeholder="Birtday"
-            formControlName="birthday"
+            id="dateOfBirth"
+            placeholder="Date of Birtday"
+            formControlName="dateOfBirth"
             [ngClass]="{
-              'is-invalid': errorMsgs['birthday']
+              'is-invalid': errorMsgs['dateOfBirth']
             }"
           />
-          <label for="birthday"
-            >Birthday<span class="text-danger"><b>*</b></span></label
+          <label for="dateOfBirth"
+            >Date of Birthday<span class="text-danger"><b>*</b></span></label
           >
-          <div *ngIf="errorMsgs['birthday']" class="text-danger">
-            {{ errorMsgs['birthday'] }}
+          <div *ngIf="errorMsgs['dateOfBirth']" class="text-danger">
+            {{ errorMsgs['dateOfBirth'] }}
           </div>
         </div>
       </div>
