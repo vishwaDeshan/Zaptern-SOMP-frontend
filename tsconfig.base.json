@@ -30,6 +30,7 @@
       "@zaptern-somp-frontend/form-container": [
         "libs/shared/components/form-container/src/index.ts"
       ],
+      "@zaptern-somp-frontend/helpers": ["libs/shared/helpers/src/index.ts"],
       "@zaptern-somp-frontend/model": ["libs/somp-portal/model/src/index.ts"],
       "@zaptern-somp-frontend/services": ["libs/shared/services/src/index.ts"],
       "@zaptern-somp-frontend/student-list": ["libs/student-list/src/index.ts"],
