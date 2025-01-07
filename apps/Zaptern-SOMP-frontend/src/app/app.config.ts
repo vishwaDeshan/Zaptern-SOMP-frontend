@@ -14,9 +14,9 @@ import { provideState, provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { navbarFeature } from '../../../../libs/common/data-access/+state/navigation/nav-bar.selectors';
-import { applicantReducer } from '../../../../libs/applicants-list/src/lib/applicants-list/data-access/+state/applicant-list.reducers';
-import { ApplicantEffects } from '../../../../libs/applicants-list/src/lib/applicants-list/data-access/+state/applicant-list.effects';
+import { navbarFeature } from '../../../../libs/common/data-access/+state/navigation/nav-bar.selectors'; // todo create a separte lib for common components
+import { applicantReducer } from '@zaptern-somp-frontend/applicants-list';
+import { ApplicantEffects } from '@zaptern-somp-frontend/applicants-list';
 
 export const appConfig: ApplicationConfig = {
   providers: [
