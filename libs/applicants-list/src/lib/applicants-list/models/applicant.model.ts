@@ -1,8 +1,7 @@
 export interface Applicant {
   applicantId: string;
   nationalId: string;
-  homeAddress: string;
-  homeCity: string;
+  City: string;
   phoneNumber: string;
   landLine: string;
 }

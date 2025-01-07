@@ -1,8 +1,14 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { ApplicantState } from './applicant-list.reducers';
+import {
+  createFeature,
+  createFeatureSelector,
+  createSelector,
+} from '@ngrx/store';
+import { ApplicantState, applicantReducer } from './applicant-list.reducers';
+
+export const ApplicantFeatureKey = 'applicant';
 
 export const selectApplicantState =
-  createFeatureSelector<ApplicantState>('applicant');
+  createFeatureSelector<ApplicantState>(ApplicantFeatureKey);
 
 export const selectApplicants = createSelector(
   selectApplicantState,
@@ -18,3 +24,8 @@ export const selectApplicantsError = createSelector(
   selectApplicantState,
   (state) => state.error
 );
+
+export const applicantFeature = createFeature({
+  name: ApplicantFeatureKey,
+  reducer: applicantReducer,
+});

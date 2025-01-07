@@ -7,7 +7,6 @@ import {
 } from '../data-access/+state/applicant-list.selectors';
 import { Store } from '@ngrx/store';
 import { loadApplicants } from '../data-access/+state/applicants-list.actions';
-import { provideEffects } from '@ngrx/effects';
 import { ApplicantEffects } from '../data-access/+state/applicant-list.effects';
 
 @Component({
