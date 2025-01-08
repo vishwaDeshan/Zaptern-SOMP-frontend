@@ -8,7 +8,7 @@ export const loadPersonalDetails = createAction(
 
 export const updatePersonalDetails = createAction(
   '[Personal Details] Update Personal Details',
-  props<{ id: string; personalDetails: PersonalDetails }>()
+  props<{ personalDetails: PersonalDetails }>()
 );
 
 export const loadPersonalDetailsSuccess = createAction(

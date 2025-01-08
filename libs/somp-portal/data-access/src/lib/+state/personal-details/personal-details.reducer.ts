@@ -23,7 +23,7 @@ export const initialState: State = {
     nationality: '',
     street: '',
     city: '',
-    zipCode: ''
+    zipCode: '',
   },
   loading: false,
   error: null,
@@ -51,7 +51,7 @@ export const personalDetailsReducer = createReducer(
   })),
   on(
     PersonalDetailsActions.updatePersonalDetails,
-    (state, { id, personalDetails }) => ({
+    (state, { personalDetails }) => ({
       ...state,
       personalDetails: {
         ...state.personalDetails,

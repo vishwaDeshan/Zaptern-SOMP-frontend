@@ -39,9 +39,9 @@ export class PersonalDetailsEffects {
   updatePersonalDetails$ = createEffect(() =>
     this.actions$.pipe(
       ofType(PersonalDetailsActions.updatePersonalDetails),
-      switchMap(({ id, personalDetails }) => {
+      switchMap(({ personalDetails }) => {
         return this.personalDetailsService
-          .updatePersonalDetails(id, personalDetails)
+          .updatePersonalDetails(personalDetails)
           .pipe(
             map(() =>
               PersonalDetailsActions.loadPersonalDetailsSuccess({
