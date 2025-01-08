@@ -17,11 +17,10 @@ export class PersonalDetailsService {
   }
 
   updatePersonalDetails(
-    id: string,
     personalDetails: PersonalDetails
   ): Observable<PersonalDetails> {
     return this.http.put<PersonalDetails>(
-      `${environment.apiUrl}/applicant/updateApplicants/${id}`,
+      `${environment.apiUrl}/applicant/updateApplicant`,
       personalDetails
     );
   }

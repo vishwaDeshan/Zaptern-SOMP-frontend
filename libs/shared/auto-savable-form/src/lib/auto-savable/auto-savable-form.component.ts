@@ -18,6 +18,7 @@ import { AUTOSAVABLEFORM } from './auto-savable-form.token';
 
 @Component({
   selector: 'somp-auto-savable-form',
+  standalone: true,
   template: `<div>
     <ng-content></ng-content>
   </div>`,
