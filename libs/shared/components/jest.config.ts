@@ -1,9 +1,8 @@
 export default {
-  displayName: 'form-container',
-  preset: '../../../../jest.preset.js',
+  displayName: 'components',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-  coverageDirectory:
-    '../../../../coverage/libs/shared/components/form-container',
+  coverageDirectory: '../../../coverage/libs/shared/components',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': [
       'jest-preset-angular',

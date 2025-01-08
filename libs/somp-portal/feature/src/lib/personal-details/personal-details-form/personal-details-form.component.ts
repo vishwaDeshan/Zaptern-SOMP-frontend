@@ -6,7 +6,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { FormContainerComponent } from '@zaptern-somp-frontend/form-container';
+import { FormContainerComponent } from '@zaptern-somp-frontend/components';
 import {
   ErrorMessageProcessor,
   FormValidator,

@@ -21,6 +21,9 @@
       "@zaptern-somp-frontend/auto-savable-form": [
         "libs/shared/auto-savable-form/src/index.ts"
       ],
+      "@zaptern-somp-frontend/components": [
+        "libs/shared/components/src/index.ts"
+      ],
       "@zaptern-somp-frontend/data-access": [
         "libs/somp-portal/data-access/src/index.ts"
       ],
