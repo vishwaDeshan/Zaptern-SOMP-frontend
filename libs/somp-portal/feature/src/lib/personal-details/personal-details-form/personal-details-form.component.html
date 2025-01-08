@@ -279,18 +279,18 @@
           <input
             type="text"
             class="form-control"
-            id="zip"
+            id="zipCode"
             placeholder="Zip Code"
-            formControlName="zip"
+            formControlName="zipCode"
             [ngClass]="{
-              'is-invalid': errorMsgs['zip']
+              'is-invalid': errorMsgs['zipCode']
             }"
           />
-          <label for="zip"
+          <label for="zipCode"
             >Zip Code<span class="text-danger"><b>*</b></span></label
           >
-          <div *ngIf="errorMsgs['zip']" class="text-danger">
-            {{ errorMsgs['zip'] }}
+          <div *ngIf="errorMsgs['zipCode']" class="text-danger">
+            {{ errorMsgs['zipCode'] }}
           </div>
         </div>
       </div>

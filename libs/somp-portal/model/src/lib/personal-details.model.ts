@@ -1,5 +1,6 @@
 export interface PersonalDetails {
   id: string;
+  applicantId: string;
   firstName: string;
   lastName: string;
   middleName?: string;
@@ -16,6 +17,7 @@ export interface PersonalDetails {
   zipCode: string;
   hobbies?: string;
   otherHobbies?: string;
+  anyComments?: string;
 }
 
 export interface applicantList {

@@ -8,13 +8,11 @@ import { environment } from 'apps/Zaptern-SOMP-frontend/src/environments/environ
   providedIn: 'root',
 })
 export class PersonalDetailsService {
-  private apiUrl = 'https://api.example.com/personal-details'; // Replace with your actual API URL
-
   constructor(private http: HttpClient) {}
 
   getPersonalDetails(id: string): Observable<PersonalDetails> {
     return this.http.get<PersonalDetails>(
-      `${environment.apiUrl}/applicant/getApplicants/${id}`
+      `${environment.apiUrl}/applicant/getApplicant?Id=${id}`
     );
   }
 

@@ -15,8 +15,10 @@ import { provideEffects } from '@ngrx/effects';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { navbarFeature } from '../../../../libs/common/data-access/+state/navigation/nav-bar.selectors'; // todo create a separte lib for common components
-import { applicantReducer } from '@zaptern-somp-frontend/applicants-list';
 import { ApplicantEffects } from '@zaptern-somp-frontend/applicants-list';
+import { applicantFeature } from '@zaptern-somp-frontend/applicants-list';
+import { personalDetailsFeature } from '@zaptern-somp-frontend/data-access';
+import { PersonalDetailsEffects } from '@zaptern-somp-frontend/data-access';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,9 +30,10 @@ export const appConfig: ApplicationConfig = {
       withComponentInputBinding()
     ),
     provideStore(),
-    provideState({ name: 'applicant', reducer: applicantReducer }),
+    provideState(applicantFeature),
     provideState(navbarFeature),
-    provideEffects([ApplicantEffects]),
+    provideState(personalDetailsFeature),
+    provideEffects([ApplicantEffects, PersonalDetailsEffects]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

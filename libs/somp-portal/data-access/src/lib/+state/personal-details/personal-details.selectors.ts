@@ -1,13 +1,19 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { State } from './personal-details.reducer';
+import {
+  createFeature,
+  createFeatureSelector,
+  createSelector,
+} from '@ngrx/store';
+import { State, personalDetailsReducer } from './personal-details.reducer';
 
-export const selectPersonalDetailsState =
-  createFeatureSelector<State>('personalDetails');
+export const PersonalDetailsFeatureKey = 'personalDetails';
 
-export const selectPersonalDetailsById = (id: string) =>
-  createSelector(
+export const selectPersonalDetailsState = createFeatureSelector<State>(
+  PersonalDetailsFeatureKey
+);
+
+export const selectPersonalDetails = createSelector(
     selectPersonalDetailsState,
-    (state: State) => state.personalDetails[id]
+    (state: State) => state.personalDetails
   );
 
 export const selectLoading = createSelector(
@@ -19,3 +25,8 @@ export const selectError = createSelector(
   selectPersonalDetailsState,
   (state: State) => state.error
 );
+
+export const personalDetailsFeature = createFeature({
+  name: PersonalDetailsFeatureKey,
+  reducer: personalDetailsReducer,
+});
