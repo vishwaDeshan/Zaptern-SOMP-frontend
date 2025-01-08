@@ -66,40 +66,122 @@
     <div class="row mt-4">
       <div class="col-md-7">
         <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="gender"
-            placeholder="Gender"
-            formControlName="gender"
-            [ngClass]="{
-              'is-invalid': errorMsgs['gender']
-            }"
-          />
-          <label for="gender"
-            >Gender<span class="text-danger"><b>*</b></span></label
-          >
-          <div *ngIf="errorMsgs['gender']" class="text-danger">
-            {{ errorMsgs['gender'] }}
+          <p>
+            Gender<span class="text-danger"><b>*</b></span>
+          </p>
+          <div class="d-flex justify-content-start align-items-center gap-3">
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="male"
+                formControlName="gender"
+                value="male"
+                [ngClass]="{ 'is-invalid': errorMsgs['gender'] }"
+              />
+              <label class="form-check-label" for="male">Male</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="female"
+                formControlName="gender"
+                value="female"
+                [ngClass]="{ 'is-invalid': errorMsgs['gender'] }"
+              />
+              <label class="form-check-label" for="female">Female</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="other"
+                formControlName="gender"
+                value="other"
+                [ngClass]="{ 'is-invalid': errorMsgs['gender'] }"
+              />
+              <label class="form-check-label" for="other">Other</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="preferNotToSay"
+                formControlName="gender"
+                value="preferNotToSay"
+                [ngClass]="{ 'is-invalid': errorMsgs['gender'] }"
+              />
+              <label class="form-check-label" for="preferNotToSay"
+                >Prefer not to say</label
+              >
+            </div>
+
+            <div *ngIf="errorMsgs['gender']" class="text-danger">
+              {{ errorMsgs['gender'] }}
+            </div>
           </div>
         </div>
       </div>
 
       <div class="col-md-5">
         <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="pronouns"
-            placeholder="Pronoun"
-            formControlName="pronouns"
-            [ngClass]="{
-              'is-invalid': errorMsgs['pronouns']
-            }"
-          />
-          <label for="pronouns"
-            >Pronoun<span class="text-danger"><b>*</b></span></label
-          >
+          <p>
+            What are your pronouns?<span class="text-danger"><b>*</b></span>
+          </p>
+          <div class="d-flex justify-content-start align-items-center gap-3">
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="hehim"
+                formControlName="pronouns"
+                value="hehim"
+                [ngClass]="{ 'is-invalid': errorMsgs['pronouns'] }"
+              />
+              <label class="form-check-label" for="hehim">He/Him</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="sheher"
+                formControlName="pronouns"
+                value="sheher"
+                [ngClass]="{ 'is-invalid': errorMsgs['pronouns'] }"
+              />
+              <label class="form-check-label" for="sheher">She/Her</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="theythem"
+                formControlName="pronouns"
+                value="theythem"
+                [ngClass]="{ 'is-invalid': errorMsgs['pronouns'] }"
+              />
+              <label class="form-check-label" for="theythem">They/Them</label>
+            </div>
+
+            <div class="form-check">
+              <input
+                type="radio"
+                class="form-check-input"
+                id="otherPronoun"
+                formControlName="pronouns"
+                value="other"
+                [ngClass]="{ 'is-invalid': errorMsgs['pronouns'] }"
+              />
+              <label class="form-check-label" for="otherPronoun">Other</label>
+            </div>
+          </div>
+
           <div *ngIf="errorMsgs['pronouns']" class="text-danger">
             {{ errorMsgs['pronouns'] }}
           </div>
