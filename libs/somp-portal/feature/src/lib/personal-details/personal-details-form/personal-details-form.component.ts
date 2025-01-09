@@ -1,5 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -21,16 +29,26 @@ import {
   NUMBERS_REGEX,
 } from '@zaptern-somp-frontend/helpers';
 import { PersonalDetails } from '@zaptern-somp-frontend/model';
+import { AUTOSAVABLEFORM } from '@zaptern-somp-frontend/auto-savable-form';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 
 @Component({
   selector: 'somp-personal-details-form',
   standalone: true,
   templateUrl: './personal-details-form.component.html',
   styleUrls: ['./personal-details-form.component.scss'],
+  providers: [
+    {
+      provide: AUTOSAVABLEFORM,
+      useExisting: PersonalDetailsFormComponent,
+    },
+  ],
   imports: [CommonModule, ReactiveFormsModule, FormContainerComponent],
 })
 export class PersonalDetailsFormComponent implements OnInit, OnChanges {
   @Input() personalDetails: PersonalDetails | undefined;
+  @Output() updatePersonalDetails = new EventEmitter<PersonalDetails>();
+  @Output() autoSave = new EventEmitter<any>();
 
   personalDetailsForm: FormGroup | undefined;
   errorMsgs: { [key: string]: string } = {};
@@ -116,9 +134,22 @@ export class PersonalDetailsFormComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.initForm();
+
     if (this.personalDetails) {
       this.personalDetailsForm?.patchValue(this.personalDetails);
     }
+
+    this.personalDetailsForm?.valueChanges
+      .pipe(debounceTime(1000), distinctUntilChanged())
+      .subscribe(() => {
+        if (
+          this.personalDetailsForm?.valid &&
+          this.personalDetailsForm?.dirty
+        ) {
+          this.updatePersonalDetails.emit(this.personalDetailsForm.value);
+          this.personalDetailsForm.markAsPristine();
+        }
+      });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -209,5 +240,13 @@ export class PersonalDetailsFormComponent implements OnInit, OnChanges {
         this.personalDetailsForm!
       );
     });
+  }
+
+  // Expose form for AutoSavableFormComponent
+  get form(): FormGroup {
+    if (!this.personalDetailsForm) {
+      throw new Error('personalDetailsForm is not initialized.');
+    }
+    return this.personalDetailsForm;
   }
 }
