@@ -5,7 +5,7 @@ import {
   OnDestroy,
 } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Router, NavigationStart } from '@angular/router';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import {
   debounceTime,
@@ -26,20 +26,19 @@ import { AUTOSAVABLEFORM } from './auto-savable-form.token';
 export class AutoSavableFormComponent implements AfterContentInit, OnDestroy {
   @ContentChild(AUTOSAVABLEFORM) autoSavableForm!: AutoSavableForm;
   private autoSaveUnsubscribe = new Subject<void>();
-  private debounceTimeMs = 1500; // Debounce time in milliseconds
+  private debounceTimeMs = 1500;
   form!: FormGroup;
 
   constructor(private router: Router) {}
 
   ngAfterContentInit(): void {
     if (!this.autoSavableForm) {
-      console.error('No form found for AutoSavableFormComponent');
+      console.error('No form found fo');
       return;
     }
 
     this.form = this.autoSavableForm.form;
 
-    // Subscribe to form changes with debounce
     this.form.valueChanges
       .pipe(
         debounceTime(this.debounceTimeMs), // Delay to avoid rapid updates
@@ -52,24 +51,6 @@ export class AutoSavableFormComponent implements AfterContentInit, OnDestroy {
           this.form.markAsPristine(); // Mark as saved to avoid re-emitting
         }
       });
-
-    // Trigger validation on navigation
-    this.router.events
-      .pipe(
-        filter((event) => event instanceof NavigationStart),
-        takeUntil(this.autoSaveUnsubscribe)
-      )
-      .subscribe(() => {
-        if (this.form.dirty || this.form.touched) {
-          this.triggerValidations();
-        }
-      });
-  }
-
-  private triggerValidations() {
-    if (this.form) {
-      this.form.markAllAsTouched();
-    }
   }
 
   ngOnDestroy(): void {
