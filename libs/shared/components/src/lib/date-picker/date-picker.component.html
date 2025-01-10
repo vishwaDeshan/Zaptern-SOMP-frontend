@@ -1,0 +1,15 @@
+<div class="form-floating">
+  <ngb-datepicker
+    [(ngModel)]="selectedDate"
+    (ngModelChange)="onDateChange($event)"
+    [ngClass]="{ 'is-invalid': errorMessage }"
+    id="datepicker"
+    #datePicker="ngModel"
+  ></ngb-datepicker>
+  <label for="datepicker">
+    {{ label }}<span *ngIf="isRequired" class="text-danger"><b>*</b></span>
+  </label>
+  <div *ngIf="errorMessage" class="text-danger">
+    {{ errorMessage }}
+  </div>
+</div>
