@@ -33,7 +33,7 @@ export class AutoSavableFormComponent implements AfterContentInit, OnDestroy {
 
   ngAfterContentInit(): void {
     if (!this.autoSavableForm) {
-      console.error('No form found fo');
+      console.error('No form found.');
       return;
     }
 
