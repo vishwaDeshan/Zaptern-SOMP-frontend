@@ -1,5 +1,37 @@
-.form-floating {
+.date-picker {
     position: relative;
+    
+    .form-floating {
+      display: flex;
+      align-items: center;
+  
+      input {
+        cursor: pointer;
+        padding-right: 30px;
+      }
+  
+      .input-icon {
+        position: absolute;
+        right: 10px;
+        z-index: 1;
+        cursor: pointer;
+        color: #0a3063;
+  
+        i {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  
+    ngb-datepicker {
+      position: absolute;
+      z-index: 1050;
+      top: 100%;
+      left: 0;
+      background-color: white;
+      border: 1px solid #ddd;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
   
     .is-invalid {
       border-color: #dc3545;
