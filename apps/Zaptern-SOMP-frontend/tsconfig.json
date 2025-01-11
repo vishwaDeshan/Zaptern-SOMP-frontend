@@ -10,7 +10,14 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@shared/ui-styles/*": ["libs/shared/ui/src/lib/ui-styles/*"]
+      "@shared/ui-styles/*": ["libs/shared/ui/src/lib/ui-styles/*"],
+      "@zaptern-somp-frontend/*": [
+        "libs/*/src/index.ts",
+        "libs/shared/*/src/index.ts", 
+        "libs/components/*/src/index.ts",
+        "libs/directives/*/src/index.ts",
+        "libs/somp-portal/*/src/index.ts",
+        "libs/auto-savable-form/*/src/index.ts",]
     }
   },
   "files": [],
