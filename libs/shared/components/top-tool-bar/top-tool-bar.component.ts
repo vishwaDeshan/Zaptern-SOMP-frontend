@@ -1,5 +1,11 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+} from '@angular/core';
 
 @Component({
   selector: 'somp-tool-top-bar',
@@ -8,7 +14,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
   styleUrls: ['./top-tool-bar.component.scss'],
   imports: [CommonModule],
 })
-export class ToolTopBarComponent implements OnChanges {
+export class ToolTopBarComponent implements OnChanges, OnInit {
   @Input() currentPage: string = 'Personal Information';
   @Input() formSaving: boolean = false;
   @Input() formSaved: boolean = false;
@@ -16,6 +22,13 @@ export class ToolTopBarComponent implements OnChanges {
 
   private isSaving: boolean = false;
   private saveTimeout: any;
+
+  ngOnInit(): void {
+    const savedStatus = localStorage.getItem('saveStatus');
+    if (savedStatus) {
+      this.saveStatus = savedStatus;
+    }
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['formSaving']) {
@@ -41,5 +54,6 @@ export class ToolTopBarComponent implements OnChanges {
 
   showSaveStatus(status: string, timestamp: Date): void {
     this.saveStatus = `${status} at ${timestamp.toLocaleTimeString()}`;
+    localStorage.setItem('saveStatus', this.saveStatus);
   }
 }
