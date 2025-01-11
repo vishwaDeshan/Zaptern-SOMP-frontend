@@ -18,7 +18,7 @@ export class ToolTopBarComponent implements OnChanges {
     if (changes['formSaving'] && this.formSaving) {
       this.saveStatus = 'Saving...';
     }
-    if (changes['formSaved'] && this.formSaved) {
+    if (changes['formSaved']) {
       this.showSaveStatus('Last Saved', new Date());
     }
   }

@@ -1,7 +1,12 @@
 <div class="tool-top-bar">
   <div class="left-section">
     <h1>{{ currentPage }}</h1>
-    <p *ngIf="saveStatus">{{ saveStatus }}</p>
+    <div class="saving-text">
+      <span *ngIf="saveStatus == 'Saving...'"
+        ><i class="bi bi-arrow-clockwise rotating"></i
+      ></span>
+      <p *ngIf="saveStatus">{{ saveStatus }}</p>
+    </div>
   </div>
 
   <div class="right-section">
