@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { SideBarComponent } from 'libs/shared/components/side-bar/libs/side-bar.component';
+import { SideBarComponent } from '@zaptern-somp-frontend/components';
 import { ToolTopBarComponent } from 'libs/shared/components/top-tool-bar/top-tool-bar.component';
 
 @Component({
