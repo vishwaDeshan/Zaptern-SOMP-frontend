@@ -31,6 +31,7 @@ import {
 import { PersonalDetails } from '@zaptern-somp-frontend/model';
 import { AUTOSAVABLEFORM } from '@zaptern-somp-frontend/auto-savable-form';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { DatePickerComponent } from '@zaptern-somp-frontend/components';
 
 @Component({
   selector: 'somp-personal-details-form',
@@ -43,7 +44,12 @@ import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
       useExisting: PersonalDetailsFormComponent,
     },
   ],
-  imports: [CommonModule, ReactiveFormsModule, FormContainerComponent],
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormContainerComponent,
+    DatePickerComponent,
+  ],
 })
 export class PersonalDetailsFormComponent implements OnInit, OnChanges {
   @Input() personalDetails: PersonalDetails | undefined;

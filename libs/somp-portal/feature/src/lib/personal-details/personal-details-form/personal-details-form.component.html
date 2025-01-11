@@ -191,25 +191,18 @@
 
     <div class="row mt-4">
       <div class="col-md-4">
-        <div class="form-floating">
-          <input
-            type="text"
-            class="form-control"
-            id="dateOfBirth"
-            placeholder="Date of Birtday"
-            formControlName="dateOfBirth"
-            [ngClass]="{
-              'is-invalid': errorMsgs['dateOfBirth']
-            }"
-          />
-          <label for="dateOfBirth"
-            >Date of Birthday<span class="text-danger"><b>*</b></span></label
-          >
-          <div *ngIf="errorMsgs['dateOfBirth']" class="text-danger">
-            {{ errorMsgs['dateOfBirth'] }}
-          </div>
-        </div>
+        <somp-date-picker
+          [selectedDate]="personalDetailsForm?.get('dateOfBirth')?.value"
+          [label]="'Date of Birth'"
+          [placeholder]="'dd/mm/yyyy'"
+          [isRequired]="true"
+          [errorMessage]="errorMsgs['dateOfBirth']"
+          (dateChange)="
+            personalDetailsForm?.get('dateOfBirth')?.setValue($event)
+          "
+        ></somp-date-picker>
       </div>
+
       <div class="col-md-4">
         <div class="form-floating">
           <input
