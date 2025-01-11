@@ -4,7 +4,10 @@
   </div>
   <div class="main-content">
     <div>
-      <somp-tool-top-bar></somp-tool-top-bar>
+      <somp-tool-top-bar
+        [formSaving]="isFormSaving$ | async"
+        [formSaved]="isFormSaveSuccess$ | async"
+      ></somp-tool-top-bar>
     </div>
     <div class="content-area">
       <router-outlet></router-outlet>

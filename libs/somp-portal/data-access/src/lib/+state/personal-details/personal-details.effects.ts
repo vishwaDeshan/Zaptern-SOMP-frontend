@@ -45,12 +45,12 @@ export class PersonalDetailsEffects {
           .updatePersonalDetails(personalDetails)
           .pipe(
             map(() =>
-              PersonalDetailsActions.loadPersonalDetailsSuccess({
+              PersonalDetailsActions.updatePersonalDetailsSuccess({
                 personalDetails,
               })
             ),
             catchError((error) =>
-              of(PersonalDetailsActions.loadPersonalDetailsFailure({ error }))
+              of(PersonalDetailsActions.updatePersonalDetailsFailure({ error }))
             )
           );
       })
@@ -66,14 +66,14 @@ export class PersonalDetailsEffects {
 
   onFormSaveSuccess$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(PersonalDetailsActions.loadPersonalDetailsSuccess),
+      ofType(PersonalDetailsActions.updatePersonalDetailsSuccess),
       map(() => SharedStateActions.FormSaved())
     );
   });
 
   onFormSaveError$ = createEffect(() => {
     return this.actions$.pipe(
-      ofType(PersonalDetailsActions.loadPersonalDetailsFailure),
+      ofType(PersonalDetailsActions.updatePersonalDetailsFailure),
       map(() => SharedStateActions.FormSaveError())
     );
   });

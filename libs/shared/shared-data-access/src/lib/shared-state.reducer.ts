@@ -4,6 +4,7 @@ import {
   showBorderLine,
   startFormSaving,
   FormSaved,
+  FormSaveError,
 } from './shared-state.actions';
 
 export interface SharedState {
@@ -25,6 +26,15 @@ export const sharedStateReducer = createReducer(
   on(showBorderLine, (state) => ({ ...state, lineVisible: true })),
   on(hideBorderLine, (state) => ({ ...state, lineVisible: false })),
   on(startFormSaving, (state) => ({ ...state, formSaving: true })),
-  on(FormSaved, (state) => ({ ...state, formSavedSuccess: true })),
-  on(FormSaved, (state) => ({ ...state, formSavedError: true }))
+  on(FormSaved, (state) => ({
+    ...state,
+    formSavedSuccess: true,
+    formSaving: false,
+  })),
+  on(FormSaveError, (state) => ({
+    ...state,
+    formSavedError: true,
+    formSavedSuccess: false,
+    formSaving: false,
+  }))
 );

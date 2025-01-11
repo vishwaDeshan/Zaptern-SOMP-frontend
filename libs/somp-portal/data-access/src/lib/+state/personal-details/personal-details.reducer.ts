@@ -1,6 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { PersonalDetails } from '@zaptern-somp-frontend/model';
 import * as PersonalDetailsActions from './personal-details.actions';
+import { state } from '@angular/animations';
 
 export interface State {
   personalDetails: PersonalDetails;
@@ -57,6 +58,23 @@ export const personalDetailsReducer = createReducer(
         ...state.personalDetails,
         ...personalDetails,
       },
+    })
+  ),
+  on(
+    PersonalDetailsActions.updatePersonalDetailsSuccess,
+    (state, { personalDetails }) => ({
+      ...state,
+      personalDetails: personalDetails,
+      loading: false,
+      error: null,
+    })
+  ),
+  on(
+    PersonalDetailsActions.updatePersonalDetailsFailure,
+    (state, { error }) => ({
+      ...state,
+      loading: false,
+      error,
     })
   )
 );
