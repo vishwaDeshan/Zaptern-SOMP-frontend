@@ -16,6 +16,21 @@ export const selectLineVisible = createSelector(
   (state: SharedState) => state.lineVisible
 );
 
+export const selectFormSaving = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.formSaving
+);
+
+export const selectFormSavedSuccess = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.formSavedSuccess
+);
+
+export const selectFormSavedError = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.formSavedError
+);
+
 export const SharedStateFeature = createFeature({
   name: SharedStateFeatureKey,
   reducer: sharedStateReducer,

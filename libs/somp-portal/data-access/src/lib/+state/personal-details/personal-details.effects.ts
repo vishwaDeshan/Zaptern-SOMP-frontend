@@ -4,6 +4,7 @@ import { map, catchError, switchMap, finalize } from 'rxjs/operators';
 import { PersonalDetailsService } from '../../api-services/personal-details.service';
 import { LoadingPopupService } from '@zaptern-somp-frontend/services';
 import * as PersonalDetailsActions from './personal-details.actions';
+import * as SharedStateActions from '@zaptern-somp-frontend/shared-data-access';
 import { of } from 'rxjs';
 
 @Injectable()
@@ -55,4 +56,25 @@ export class PersonalDetailsEffects {
       })
     )
   );
+
+  onFormSaveStart$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PersonalDetailsActions.updatePersonalDetails),
+      map(() => SharedStateActions.startFormSaving())
+    );
+  });
+
+  onFormSaveSuccess$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PersonalDetailsActions.loadPersonalDetailsSuccess),
+      map(() => SharedStateActions.FormSaved())
+    );
+  });
+
+  onFormSaveError$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(PersonalDetailsActions.loadPersonalDetailsFailure),
+      map(() => SharedStateActions.FormSaveError())
+    );
+  });
 }
