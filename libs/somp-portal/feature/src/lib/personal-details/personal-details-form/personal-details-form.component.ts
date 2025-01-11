@@ -32,6 +32,7 @@ import { PersonalDetails } from '@zaptern-somp-frontend/model';
 import { AUTOSAVABLEFORM } from '@zaptern-somp-frontend/auto-savable-form';
 import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
 import { DatePickerComponent } from '@zaptern-somp-frontend/components';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'somp-personal-details-form',
@@ -254,5 +255,22 @@ export class PersonalDetailsFormComponent implements OnInit, OnChanges {
       throw new Error('personalDetailsForm is not initialized.');
     }
     return this.personalDetailsForm;
+  }
+
+  onDateChange(date: string | undefined): void {
+    const dateControl = this.personalDetailsForm?.get('dateOfBirth');
+    if (dateControl) {
+      dateControl.setValue(date);
+      dateControl.markAsDirty();
+      dateControl.markAsTouched();
+    }
+  }
+
+  convertToNgbDateStruct(isoString: string): NgbDateStruct | null {
+    if (!isoString) {
+      return null;
+    }
+    const [year, month, day] = isoString.split('T')[0].split('-').map(Number);
+    return { year, month, day };
   }
 }

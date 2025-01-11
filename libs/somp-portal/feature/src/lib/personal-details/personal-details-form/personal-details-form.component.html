@@ -192,14 +192,16 @@
     <div class="row mt-4">
       <div class="col-md-4">
         <somp-date-picker
-          [selectedDate]="personalDetailsForm?.get('dateOfBirth')?.value"
+          [selectedDate]="
+            convertToNgbDateStruct(
+              personalDetailsForm?.get('dateOfBirth')?.value
+            )
+          "
           [label]="'Date of Birth'"
           [placeholder]="'dd/mm/yyyy'"
           [isRequired]="true"
           [errorMessage]="errorMsgs['dateOfBirth']"
-          (dateChange)="
-            personalDetailsForm?.get('dateOfBirth')?.setValue($event)
-          "
+          (dateChange)="onDateChange($event)"
         ></somp-date-picker>
       </div>
 
