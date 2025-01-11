@@ -14,11 +14,27 @@ export class ToolTopBarComponent implements OnChanges {
   @Input() formSaved: boolean = false;
   saveStatus: string | null = null;
 
+  private isSaving: boolean = false;
+  private saveTimeout: any;
+
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['formSaving'] && this.formSaving) {
-      this.saveStatus = 'Saving...';
+    if (changes['formSaving']) {
+      if (this.formSaving && !this.isSaving) {
+        this.saveStatus = 'Saving...';
+        this.isSaving = true;
+      } else if (!this.formSaving && this.isSaving) {
+        clearTimeout(this.saveTimeout);
+        this.saveTimeout = setTimeout(() => {
+          if (this.formSaved) {
+            this.showSaveStatus('Last Saved', new Date());
+          }
+          this.isSaving = false;
+        }, 1000);
+      }
     }
-    if (changes['formSaved']) {
+
+    if (changes['formSaved'] && this.formSaved && !this.formSaving) {
+      clearTimeout(this.saveTimeout);
       this.showSaveStatus('Last Saved', new Date());
     }
   }
