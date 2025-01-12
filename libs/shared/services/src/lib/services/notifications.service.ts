@@ -13,8 +13,6 @@ export interface Notification {
 export class NotificationsService {
   private notifications = signal<Notification[]>([]);
 
-  constructor(private alertConfig: NgbAlertConfig) {}
-
   showSuccess(message: string) {
     this.showNotification('success', message);
   }
