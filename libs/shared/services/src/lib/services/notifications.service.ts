@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { NgbAlertConfig } from '@ng-bootstrap/ng-bootstrap';
-import { Subject } from 'rxjs';
+import { signal } from '@angular/core';
 
 export interface Notification {
   type: 'success' | 'error' | 'warning' | 'info';
@@ -11,8 +11,7 @@ export interface Notification {
   providedIn: 'root',
 })
 export class NotificationsService {
-  private notificationsSubject = new Subject<Notification>();
-  notifications$ = this.notificationsSubject.asObservable();
+  private notifications = signal<Notification[]>([]);
 
   constructor(private alertConfig: NgbAlertConfig) {}
 
@@ -36,6 +35,9 @@ export class NotificationsService {
     type: 'success' | 'error' | 'warning' | 'info',
     message: string
   ) {
-    this.notificationsSubject.next({ type, message });
+    this.notifications.update((notifications) => [
+      ...notifications,
+      { type, message },
+    ]);
   }
 }

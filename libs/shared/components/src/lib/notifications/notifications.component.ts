@@ -18,11 +18,10 @@ export class NotificationsComponent implements OnInit {
   constructor(private notificationService: NotificationsService) {}
 
   ngOnInit(): void {
-    this.notificationService.notifications$.subscribe((notification) => {
-      this.notifications.push(notification);
-      setTimeout(() => {
-        this.notifications.shift();
-      }, 5000);
-    });
+    this.notifications = this.notificationService['notifications']();
+
+    setInterval(() => {
+      this.notifications = this.notificationService['notifications']();
+    }, 1000);
   }
 }
