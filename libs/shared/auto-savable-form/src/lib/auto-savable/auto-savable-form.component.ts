@@ -26,7 +26,7 @@ import { AUTOSAVABLEFORM } from './auto-savable-form.token';
 export class AutoSavableFormComponent implements AfterContentInit, OnDestroy {
   @ContentChild(AUTOSAVABLEFORM) autoSavableForm!: AutoSavableForm;
   private autoSaveUnsubscribe = new Subject<void>();
-  private debounceTimeMs = 1500;
+  private debounceTimeMs =3000;
   form!: FormGroup;
 
   constructor(private router: Router) {}

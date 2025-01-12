@@ -23,7 +23,7 @@ import { AutoSavableFormComponent } from '@zaptern-somp-frontend/auto-savable-fo
   ],
 })
 export class PersonalDetailsComponent implements OnInit {
-  applicantId: string = 'f41f2114-2f10-08dd-a1f5-fed9484ae025';
+  applicantId: string = '3a8b6227-32b9-08dd-b4b4-ab30a82df10a';
   personalDetails$: Observable<PersonalDetails>;
 
   constructor(private store: Store) {

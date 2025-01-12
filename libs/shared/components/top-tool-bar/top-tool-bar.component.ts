@@ -42,7 +42,7 @@ export class ToolTopBarComponent implements OnChanges, OnInit {
             this.showSaveStatus('Last Saved', new Date());
           }
           this.isSaving = false;
-        }, 1000);
+        }, 100);
       }
     }
 

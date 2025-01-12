@@ -1,0 +1,67 @@
+@use 'variables' as *;
+
+.notification-container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .notification {
+    min-width: 300px;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease-out, fadeOut 0.3s ease-in 4.7s forwards;
+  
+    font-size: 1rem;
+    color: $white-color;
+
+    i {
+        font-size: 1.2rem;
+        padding-left: 10px;
+      }
+  }
+  
+  .alert-success {
+    background-color: $success-color;
+  }
+  
+  .alert-error {
+    background-color: $error-color;
+  }
+  
+  .alert-warning {
+    background-color: $warning-color; 
+    color: $text-color;
+  }
+  
+  .alert-info {
+    background-color: $info-color;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+  }
+  

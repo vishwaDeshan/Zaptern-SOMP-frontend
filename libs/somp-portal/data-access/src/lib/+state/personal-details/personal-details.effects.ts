@@ -5,6 +5,7 @@ import { PersonalDetailsService } from '../../api-services/personal-details.serv
 import { LoadingPopupService } from '@zaptern-somp-frontend/services';
 import * as PersonalDetailsActions from './personal-details.actions';
 import * as SharedStateActions from '@zaptern-somp-frontend/shared-data-access';
+import { NotificationsService } from '@zaptern-somp-frontend/services';
 import { of } from 'rxjs';
 
 @Injectable()
@@ -12,7 +13,8 @@ export class PersonalDetailsEffects {
   constructor(
     private actions$: Actions,
     private personalDetailsService: PersonalDetailsService,
-    private loadingPopupService: LoadingPopupService
+    private loadingPopupService: LoadingPopupService,
+    private notificationsService: NotificationsService
   ) {}
 
   loadPersonalDetails$ = createEffect(() =>
@@ -26,9 +28,14 @@ export class PersonalDetailsEffects {
               personalDetails,
             })
           ),
-          catchError((error) =>
-            of(PersonalDetailsActions.loadPersonalDetailsFailure({ error }))
-          ),
+          catchError((error) => {
+            this.notificationsService.showError(
+              'Failed to load personal details.'
+            );
+            return of(
+              PersonalDetailsActions.loadPersonalDetailsFailure({ error })
+            );
+          }),
           finalize(() => {
             this.loadingPopupService.closeLoadingDialog();
           })
@@ -49,9 +56,14 @@ export class PersonalDetailsEffects {
                 personalDetails,
               })
             ),
-            catchError((error) =>
-              of(PersonalDetailsActions.updatePersonalDetailsFailure({ error }))
-            )
+            catchError((error) => {
+              this.notificationsService.showError(
+                'Failed to update personal details.'
+              );
+              return of(
+                PersonalDetailsActions.updatePersonalDetailsFailure({ error })
+              );
+            })
           );
       })
     )

@@ -2,7 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { SideBarComponent } from '@zaptern-somp-frontend/components';
+import {
+  SideBarComponent,
+  NotificationsComponent,
+} from '@zaptern-somp-frontend/components';
 import {
   selectFormSavedSuccess,
   selectFormSaving,
@@ -12,7 +15,7 @@ import { Observable } from 'rxjs';
 
 @Component({
   standalone: true,
-  imports: [RouterModule, ToolTopBarComponent, SideBarComponent, CommonModule],
+  imports: [RouterModule, ToolTopBarComponent, SideBarComponent,NotificationsComponent, CommonModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

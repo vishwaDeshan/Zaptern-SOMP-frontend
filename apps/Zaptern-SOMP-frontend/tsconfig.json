@@ -17,7 +17,9 @@
         "libs/components/*/src/index.ts",
         "libs/directives/*/src/index.ts",
         "libs/somp-portal/*/src/index.ts",
-        "libs/auto-savable-form/*/src/index.ts",]
+        "libs/auto-savable-form/*/src/index.ts",
+        "libs/shared/shared-data-access/*/src/index.ts"
+      ]
     }
   },
   "files": [],

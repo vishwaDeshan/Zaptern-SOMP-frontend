@@ -5,10 +5,11 @@
   <div class="main-content">
     <div>
       <somp-tool-top-bar
-        [formSaving]="isFormSaving$ | async"
-        [formSaved]="isFormSaveSuccess$ | async"
+        [formSaving]="(isFormSaving$ | async) ?? false"
+        [formSaved]="(isFormSaveSuccess$ | async) ?? false"
       ></somp-tool-top-bar>
     </div>
+    <somp-notification></somp-notification>
     <div class="content-area">
       <router-outlet></router-outlet>
     </div>
