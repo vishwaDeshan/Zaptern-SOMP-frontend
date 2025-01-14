@@ -1,6 +1,8 @@
 <div class="main-layout" [class.no-sidebar]="!isSidebarVisible">
   <div class="sidebar">
-    <somp-Side-bar></somp-Side-bar>
+    <somp-Side-bar
+      [showSideBarLine]="(isShowSideBarLines$ | async) ?? false"
+    ></somp-Side-bar>
   </div>
   <div class="main-content">
     <div>

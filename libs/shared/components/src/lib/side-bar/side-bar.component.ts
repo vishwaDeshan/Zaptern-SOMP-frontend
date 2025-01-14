@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavService } from '@zaptern-somp-frontend/services';
 import { Router, RouterModule } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'somp-Side-bar',
@@ -11,6 +12,8 @@ import { Router, RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
 })
 export class SideBarComponent {
+  @Input() showSideBarLine: boolean = false;
+
   title = 'Main Side Bar';
   logoImage = 'assets/Zaptern.png';
   menuItems: Array<{ label: string; link: string; icon: string }> = [];

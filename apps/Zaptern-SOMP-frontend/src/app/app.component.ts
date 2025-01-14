@@ -9,6 +9,7 @@ import {
 import {
   selectFormSavedSuccess,
   selectFormSaving,
+  selectLineVisible,
 } from '@zaptern-somp-frontend/shared-data-access';
 import { ToolTopBarComponent } from '@zaptern-somp-frontend/components';
 import { Observable } from 'rxjs';
@@ -31,12 +32,14 @@ export class AppComponent implements OnInit {
   isSidebarVisible = true;
   isFormSaving$ = new Observable<boolean>();
   isFormSaveSuccess$ = new Observable<boolean>();
+  isShowSideBarLines$ = new Observable<boolean>();
 
   constructor(private store: Store) {}
 
   ngOnInit(): void {
     this.isFormSaving$ = this.store.select(selectFormSaving);
     this.isFormSaveSuccess$ = this.store.select(selectFormSavedSuccess);
+    this.isShowSideBarLines$ =  this.store.select(selectLineVisible);
   }
 
   toggleSidebar() {

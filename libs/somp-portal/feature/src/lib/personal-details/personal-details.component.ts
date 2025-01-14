@@ -10,6 +10,7 @@ import {
 import { Observable } from 'rxjs';
 import { PersonalDetails } from '@zaptern-somp-frontend/model';
 import { AutoSavableFormComponent } from '@zaptern-somp-frontend/auto-savable-form';
+import { showBorderLine } from '@zaptern-somp-frontend/shared-data-access';
 
 @Component({
   selector: 'somp-personal-details',
@@ -32,6 +33,7 @@ export class PersonalDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(loadPersonalDetails({ id: this.applicantId }));
+    this.store.dispatch(showBorderLine());
   }
 
   onUpdatePersonalDetails(personalDetails: PersonalDetails) {

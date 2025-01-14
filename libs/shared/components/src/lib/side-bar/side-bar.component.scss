@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     gap: 10px;
-
+    border-bottom: 1px solid $sidebar-line-color;
     img {
       max-height: 50px;
     }
@@ -56,5 +56,9 @@
         font-weight: bold;
       }
     }
+  }
+
+  .showSideBarLine{
+    border-bottom: 1px solid $sidebar-line-color;
   }
 }
