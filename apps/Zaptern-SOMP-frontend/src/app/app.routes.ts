@@ -58,5 +58,5 @@ export const appRoutes: Routes = [
       ),
   },
 
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '/personal-details', pathMatch: 'full' }, // temporarily set to personal page
 ];
