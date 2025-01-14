@@ -5,6 +5,10 @@ import {
   selectApplicants,
   selectApplicantsLoading,
 } from '../data-access/+state/applicant-list.selectors';
+import {
+  hideSideBar,
+  setPageTitle,
+} from '@zaptern-somp-frontend/shared-data-access';
 import { Store } from '@ngrx/store';
 import { loadApplicants } from '../data-access/+state/applicants-list.actions';
 import { ApplicantEffects } from '../data-access/+state/applicant-list.effects';
@@ -28,5 +32,7 @@ export class ApplicantsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.store.dispatch(loadApplicants());
+    this.store.dispatch(hideSideBar());
+    this.store.dispatch(setPageTitle({ pageTitle: 'Applicant List' }));
   }
 }
