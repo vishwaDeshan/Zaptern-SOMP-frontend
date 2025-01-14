@@ -33,9 +33,6 @@ export class NotificationsService {
     type: 'success' | 'error' | 'warning' | 'info',
     message: string
   ) {
-    this.notifications.update((notifications) => [
-      ...notifications,
-      { type, message },
-    ]);
+    this.notifications.update(() => [{ type, message }]);
   }
 }
