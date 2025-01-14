@@ -18,6 +18,7 @@ export class ToolTopBarComponent implements OnChanges, OnInit {
   @Input() currentPage: string = 'Personal Information';
   @Input() formSaving: boolean = false;
   @Input() formSaved: boolean = false;
+  @Input() showTopToolBar: boolean = false;
   saveStatus: string | null = null;
 
   private isSaving: boolean = false;
@@ -55,5 +56,11 @@ export class ToolTopBarComponent implements OnChanges, OnInit {
   showSaveStatus(status: string, timestamp: Date): void {
     this.saveStatus = `${status} at ${timestamp.toLocaleTimeString()}`;
     localStorage.setItem('saveStatus', this.saveStatus);
+  }
+
+  VisibleTopToolBar(): boolean {
+    console.log('this', this.showTopToolBar);
+
+    return this.showTopToolBar;
   }
 }

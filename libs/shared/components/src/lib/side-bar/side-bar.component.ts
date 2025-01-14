@@ -13,6 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class SideBarComponent {
   @Input() showSideBarLine: boolean = false;
+  @Input() showSideBar: boolean = false;
 
   title = 'Main Side Bar';
   logoImage = 'assets/Zaptern.png';

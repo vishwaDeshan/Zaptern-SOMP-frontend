@@ -2,6 +2,7 @@
   <div class="sidebar">
     <somp-Side-bar
       [showSideBarLine]="(isShowSideBarLines$ | async) ?? false"
+      [showSideBar]="(isShowSideBar$ | async) ?? false"
     ></somp-Side-bar>
   </div>
   <div class="main-content">
@@ -9,6 +10,7 @@
       <somp-tool-top-bar
         [formSaving]="(isFormSaving$ | async) ?? false"
         [formSaved]="(isFormSaveSuccess$ | async) ?? false"
+        [showTopToolBar]="(isShowTopToolBar$ | async) ?? false"
       ></somp-tool-top-bar>
     </div>
     <somp-notification></somp-notification>

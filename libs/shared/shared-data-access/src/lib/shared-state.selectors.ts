@@ -16,6 +16,16 @@ export const selectLineVisible = createSelector(
   (state: SharedState) => state.lineVisible
 );
 
+export const selectSidebarVisible = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.sideBarVisible
+);
+
+export const selectTopToolbarVisible = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.toolTopBarVisible
+);
+
 export const selectFormSaving = createSelector(
   selectSharedState,
   (state: SharedState) => state.formSaving
