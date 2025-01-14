@@ -14,6 +14,7 @@ import {
   showBorderLine,
   showSideBar,
   showTopToolBar,
+  setPageTitle,
 } from '@zaptern-somp-frontend/shared-data-access';
 
 @Component({
@@ -40,6 +41,7 @@ export class PersonalDetailsComponent implements OnInit {
     this.store.dispatch(showBorderLine());
     this.store.dispatch(showSideBar());
     this.store.dispatch(showTopToolBar());
+    this.store.dispatch(setPageTitle({ pageTitle: 'Personal Information' }));
   }
 
   onUpdatePersonalDetails(personalDetails: PersonalDetails) {

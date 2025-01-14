@@ -9,6 +9,7 @@ import {
   showSideBar,
   hideTopToolBar,
   showTopToolBar,
+  setPageTitle,
 } from './shared-state.actions';
 
 export interface SharedState {
@@ -18,6 +19,7 @@ export interface SharedState {
   formSaving: boolean;
   formSavedSuccess: boolean;
   formSavedError: boolean;
+  pageTitle: string;
 }
 
 export const initialState: SharedState = {
@@ -27,6 +29,7 @@ export const initialState: SharedState = {
   formSaving: false,
   formSavedSuccess: false,
   formSavedError: false,
+  pageTitle: '',
 };
 
 export const sharedStateReducer = createReducer(
@@ -37,6 +40,10 @@ export const sharedStateReducer = createReducer(
   on(hideSideBar, (state) => ({ ...state, sideBarVisible: false })),
   on(showTopToolBar, (state) => ({ ...state, toolTopBarVisible: true })),
   on(hideTopToolBar, (state) => ({ ...state, toolTopBarVisible: false })),
+  on(setPageTitle, (state, { pageTitle }) => ({
+    ...state,
+    pageTitle: pageTitle,
+  })),
   on(startFormSaving, (state) => ({ ...state, formSaving: true })),
   on(FormSaved, (state) => ({
     ...state,

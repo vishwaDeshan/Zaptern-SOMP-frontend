@@ -4,6 +4,7 @@ import {
   createSelector,
 } from '@ngrx/store';
 import { sharedStateReducer, SharedState } from './shared-state.reducer';
+import { state } from '@angular/animations';
 
 const SharedStateFeatureKey = 'shared-state';
 
@@ -39,6 +40,11 @@ export const selectFormSavedSuccess = createSelector(
 export const selectFormSavedError = createSelector(
   selectSharedState,
   (state: SharedState) => state.formSavedError
+);
+
+export const selectPageTitle = createSelector(
+  selectSharedState,
+  (state: SharedState) => state.pageTitle
 );
 
 export const SharedStateFeature = createFeature({

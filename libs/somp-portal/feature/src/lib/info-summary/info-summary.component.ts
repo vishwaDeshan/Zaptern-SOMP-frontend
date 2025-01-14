@@ -1,14 +1,27 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { InfoSummaryFormComponent } from './info-summary-form/info-summary-form.component'; // Import the form component
+import { Component, OnInit } from '@angular/core';
+import { InfoSummaryFormComponent } from './info-summary-form/info-summary-form.component';
+import { Store } from '@ngrx/store';
+import {
+  setPageTitle,
+  showBorderLine,
+  showSideBar,
+  showTopToolBar,
+} from '@zaptern-somp-frontend/shared-data-access';
 
 @Component({
   selector: 'somp-info-summary',
   standalone: true,
   templateUrl: './info-summary.component.html',
   styleUrls: ['./info-summary.component.scss'],
-  imports: [CommonModule, InfoSummaryFormComponent], // Import the form component
+  imports: [CommonModule, InfoSummaryFormComponent],
 })
-export class InfoSummaryComponent {
-  // You can add any additional logic for the summary page here if needed.
+export class InfoSummaryComponent implements OnInit {
+  constructor(private store: Store) {}
+  ngOnInit(): void {
+    this.store.dispatch(showBorderLine());
+    this.store.dispatch(showSideBar());
+    this.store.dispatch(showTopToolBar());
+    this.store.dispatch(setPageTitle({ pageTitle: 'Information Overview' }));
+  }
 }

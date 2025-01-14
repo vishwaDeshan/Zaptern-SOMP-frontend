@@ -11,6 +11,7 @@
         [formSaving]="(isFormSaving$ | async) ?? false"
         [formSaved]="(isFormSaveSuccess$ | async) ?? false"
         [showTopToolBar]="(isShowTopToolBar$ | async) ?? false"
+        [pageTitle]="(pageTitle$ | async) ?? ''"
       ></somp-tool-top-bar>
     </div>
     <somp-notification></somp-notification>

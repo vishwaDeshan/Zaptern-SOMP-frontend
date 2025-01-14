@@ -15,10 +15,10 @@ import {
   imports: [CommonModule],
 })
 export class ToolTopBarComponent implements OnChanges, OnInit {
-  @Input() currentPage: string = 'Personal Information';
   @Input() formSaving: boolean = false;
   @Input() formSaved: boolean = false;
   @Input() showTopToolBar: boolean = false;
+  @Input() pageTitle = '';
   saveStatus: string | null = null;
 
   private isSaving: boolean = false;

@@ -1,4 +1,4 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
 
 export const showBorderLine = createAction('[sidebar] Show Border Line');
 export const hideBorderLine = createAction('[sidebar] Hide Border Line');
@@ -10,3 +10,7 @@ export const FormSaved = createAction('[tool top bar] Form Saved');
 export const FormSaveError = createAction('[tool top bar] Form Save Error');
 export const hideTopToolBar = createAction('[tool top bar] Hide Tool top bar');
 export const showTopToolBar = createAction('[tool top bar] Show Tool top bar');
+export const setPageTitle = createAction(
+  '[tool top bar] show page title',
+  props<{ pageTitle: string }>()
+);
