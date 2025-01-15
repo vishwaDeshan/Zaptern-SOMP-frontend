@@ -4,3 +4,4 @@ export * from './lib/experience-info/experience-info.component';
 export * from './lib/project-details/project-details.component';
 export * from './lib/health-info/health-info.component';
 export * from './lib/info-summary/info-summary.component';
+export * from './lib/personal-details/personal-details-form/personal-details-form.component';

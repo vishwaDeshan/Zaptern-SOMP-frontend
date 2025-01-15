@@ -12,9 +12,9 @@ export const selectPersonalDetailsState = createFeatureSelector<State>(
 );
 
 export const selectPersonalDetails = createSelector(
-    selectPersonalDetailsState,
-    (state: State) => state.personalDetails
-  );
+  selectPersonalDetailsState,
+  (state: State) => state.personalDetails
+);
 
 export const selectLoading = createSelector(
   selectPersonalDetailsState,
