@@ -8,13 +8,14 @@ import {
 import { PersonalDetailsFormComponent } from '@zaptern-somp-frontend/feature';
 import { PersonalDetails } from '@zaptern-somp-frontend/model';
 import { Observable } from 'rxjs';
+import { AccordionComponent } from '@zaptern-somp-frontend/components';
 
 @Component({
   selector: 'somp-info-summary-form',
   standalone: true,
   templateUrl: './info-summary-form.component.html',
   styleUrls: ['./info-summary-form.component.scss'],
-  imports: [CommonModule, PersonalDetailsFormComponent],
+  imports: [CommonModule, PersonalDetailsFormComponent, AccordionComponent],
 })
 export class InfoSummaryFormComponent implements OnInit {
   @Input() personalDetails: PersonalDetails | undefined;

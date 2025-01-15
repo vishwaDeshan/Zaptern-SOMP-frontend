@@ -1,2 +1,4 @@
-<somp-personal-details-form [personalDetails]="(personalDetails$ | async)!">
-</somp-personal-details-form>
+<somp-accordion [title]="'Personal Information'">
+  <somp-personal-details-form [personalDetails]="(personalDetails$ | async)!">
+  </somp-personal-details-form>
+</somp-accordion>

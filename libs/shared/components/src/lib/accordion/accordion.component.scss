@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+.accodion-wrapper{
+    width: 98%;
+    margin: 1rem auto;
+}
+::ng-deep .accordion-button {
+    background-color: $background-color !important;
+    border: none;
+    &:focus {
+        background-color: transparent !important; 
+        color: inherit;
+        box-shadow: none;
+      }
+    
+  }

@@ -1,0 +1,12 @@
+<div ngbAccordion class="accodion-wrapper">
+  <div ngbAccordionItem>
+    <h2 ngbAccordionHeader>
+      <button ngbAccordionButton>{{ title }}</button>
+    </h2>
+    <div ngbAccordionCollapse>
+      <div ngbAccordionBody class="accordion-body">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>
