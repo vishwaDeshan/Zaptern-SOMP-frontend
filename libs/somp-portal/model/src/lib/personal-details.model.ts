@@ -8,7 +8,7 @@ export interface PersonalDetails {
   pronouns: string;
   dateOfBirth: string;
   phoneNumber: string;
-  landline?: string;
+  landLine?: string;
   email: string;
   nationalId: string;
   nationality: string;

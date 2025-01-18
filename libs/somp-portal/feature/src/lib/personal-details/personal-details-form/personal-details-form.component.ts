@@ -92,7 +92,7 @@ export class PersonalDetailsFormComponent implements OnInit, OnChanges {
         required: 'Phone number is required.',
         pattern: 'Please enter a valide phone number.',
       },
-      landline: {
+      landLine: {
         pattern: 'Please enter a valid phone number.',
       },
       email: {
@@ -194,7 +194,7 @@ export class PersonalDetailsFormComponent implements OnInit, OnChanges {
         '',
         [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)],
       ],
-      landline: ['', [Validators.pattern(PHONE_NUMBER_REGEX)]],
+      landLine: ['', [Validators.pattern(PHONE_NUMBER_REGEX)]],
       email: ['', [Validators.required, Validators.pattern(EMAIL_REGEX)]],
       nationalId: [
         '',
