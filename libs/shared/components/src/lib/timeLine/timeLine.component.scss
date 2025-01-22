@@ -1,0 +1,111 @@
+@use 'variables' as *;
+
+.box {
+    padding: 0px 0px 0px 60px;
+    width: 100%;
+    margin-bottom: -80px;
+  }
+  
+  .box ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    position: relative;
+    transition: all 0.5s linear;
+    top: 0;
+  }
+  
+  .box ul:last-of-type {
+    top:10px;
+  }
+  
+  .box ul:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border: 1px dashed $primary-color;
+    position: absolute;
+    top: 0;
+    left: 30px;
+  }
+  
+  .box ul li {
+    margin: 20px 60px 60px;
+    position: relative;
+    padding: 10px 20px;
+    background: $box-background-color;
+    color: $primary-color;
+    border-radius: 10px;
+    line-height: 20px;
+    width: 80%;
+  }
+  
+  .box ul li > span {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border: 1px solid $primary-color;
+    position: absolute;
+    top: 0;
+    left: -30px;
+  }
+  
+  .box ul li > span:before,
+  .box ul li > span:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: $white-color;
+    border: 2px solid $secondary-color;
+    position: absolute;
+    left: -5.5px;
+  }
+  
+  .box ul li > span:before {
+    top: -10px;
+  }
+  
+  .box ul li > span:after {
+    top: 95%;
+  }
+  
+  .box .title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  
+  .box .info:first-letter {
+    text-transform: capitalize;
+    line-height: 1.7;
+  }
+  
+  .box .name {
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-style: italic;
+    text-align: right;
+    margin-right: 20px;
+  }
+  
+  .box .time span {
+    position: absolute;
+    left: -100px;
+    color: $primary-color;
+    font-size: 80%;
+    font-weight: bold;
+  }
+  
+  .box .time span:first-child {
+    top: -16px;
+  }
+  
+  .box .time span:last-child {
+    top: 94%;
+  }
+  

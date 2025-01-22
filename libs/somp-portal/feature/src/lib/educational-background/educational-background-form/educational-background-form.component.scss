@@ -1,0 +1,9 @@
+@use 'variables' as *;
+
+.add-education-details-button{
+    button{
+        float: right;
+        background-color: $primary-color !important;
+        border: none;
+    }
+}

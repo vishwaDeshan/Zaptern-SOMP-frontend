@@ -1,0 +1,13 @@
+<div class="box">
+  <ul>
+    <li *ngFor="let item of timelineData">
+      <span></span>
+      <div class="title">{{ item.title }}</div>
+      <div class="info">{{ item.description }}</div>
+      <div class="time">
+        <span>{{ item.dateRange.split('-')[0] }}</span>
+        <span>{{ item.dateRange.split('-')[1] }}</span>
+      </div>
+    </li>
+  </ul>
+</div>
