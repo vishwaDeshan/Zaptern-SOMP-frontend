@@ -38,7 +38,7 @@
       ],
       "@zaptern-somp-frontend/helpers": ["libs/shared/helpers/src/index.ts"],
       "@zaptern-somp-frontend/model": ["libs/somp-portal/model/src/index.ts"],
-      "@zaptern-somp-frontend/models": ["libs/shared/models/src/index.ts"],
+      "@zaptern-somp-frontend/common/models": ["libs/shared/models/src/index.ts"],
       "@zaptern-somp-frontend/services": ["libs/shared/services/src/index.ts"],
       "@zaptern-somp-frontend/shared-data-access": [
         "libs/shared/shared-data-access/src/index.ts"
