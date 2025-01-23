@@ -21,6 +21,8 @@ input[type="url"]:focus,
 input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus,
 .uneditable-input:focus {   
   border-color: $primary-color;
   box-shadow: 0 0 0 0.22rem rgba(10, 48, 99, 0.3);

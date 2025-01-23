@@ -1,8 +1,111 @@
 <somp-form-container [showRequiredInput]="false">
   <div class="add-education-details-button">
-    <button class="btn btn-primary">
+    <button class="btn btn-primary" (click)="openModal()">
       <i class="bi bi-building-fill-add mr-2"></i> Add Educational Details
     </button>
   </div>
+
   <somp-time-line [timelineData]="timelineData"></somp-time-line>
+
+  <div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Educational Details</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="educationForm" (ngSubmit)="onSubmit()">
+          <div class="mb-3 form-floating">
+            <input
+              type="text"
+              id="instituteName"
+              class="form-control"
+              formControlName="instituteName"
+              placeholder="Institute Name"
+            />
+            <label for="instituteName" class="form-label">Institute Name</label>
+            <div
+              *ngIf="
+                educationForm.get('instituteName')?.invalid &&
+                educationForm.get('instituteName')?.touched
+              "
+              class="text-danger"
+            >
+              Institute Name is required.
+            </div>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input
+              type="date"
+              id="startDate"
+              class="form-control"
+              formControlName="startDate"
+              placeholder="Start Date"
+            />
+            <label for="startDate" class="form-label">Start Date</label>
+            <div
+              *ngIf="
+                educationForm.get('startDate')?.invalid &&
+                educationForm.get('startDate')?.touched
+              "
+              class="text-danger"
+            >
+              Start Date is required.
+            </div>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <div class="form-check form-switch">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                formControlName="isDoing"
+              />
+              <label class="form-check-label" for="flexSwitchCheckDefault"
+                >Currently studying here</label
+              >
+            </div>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <input
+              type="date"
+              id="endDate"
+              class="form-control"
+              [disabled]="true"
+              formControlName="endDate"
+              placeholder="End Date"
+            />
+            <label for="endDate" class="form-label">End Date</label>
+          </div>
+
+          <div class="mb-3 form-floating">
+            <textarea
+              id="description"
+              class="form-control custom-textarea"
+              rows="3"
+              formControlName="description"
+              placeholder="Description"
+            ></textarea>
+            <label for="description" class="form-label">Description</label>
+          </div>
+
+          <div class="buttons float-end">
+            <button type="reset" class="btn btn-secondary me-2">Reset</button>
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="educationForm.invalid"
+              (click)="onResetForm()"
+            >
+              Add Educational Details
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </somp-form-container>
