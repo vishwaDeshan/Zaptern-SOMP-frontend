@@ -19,6 +19,8 @@ export class ToolTopBarComponent implements OnChanges, OnInit {
   @Input() formSaved: boolean = false;
   @Input() showTopToolBar: boolean = false;
   @Input() pageTitle = '';
+  private minSavingDisplayMs = 100;
+
   saveStatus: string | null = null;
 
   private isSaving: boolean = false;
@@ -37,19 +39,17 @@ export class ToolTopBarComponent implements OnChanges, OnInit {
         this.saveStatus = 'Saving...';
         this.isSaving = true;
       } else if (!this.formSaving && this.isSaving) {
-        clearTimeout(this.saveTimeout);
-        this.saveTimeout = setTimeout(() => {
-          if (this.formSaved) {
+        if (
+          this.formSaved ||
+          (changes['formSaved'] && this.formSaved && !this.formSaving)
+        ) {
+          setTimeout(() => {
+            clearTimeout(this.saveTimeout);
             this.showSaveStatus('Last Saved', new Date());
-          }
-          this.isSaving = false;
-        }, 100);
+            this.isSaving = false;
+          }, this.minSavingDisplayMs);
+        }
       }
-    }
-
-    if (changes['formSaved'] && this.formSaved && !this.formSaving) {
-      clearTimeout(this.saveTimeout);
-      this.showSaveStatus('Last Saved', new Date());
     }
   }
 
