@@ -8,7 +8,7 @@ export interface EducationalDetailsState {
   error: string | null;
 }
 
-export const initialState: EducationalDetailsState = {
+export const initialEducationalState: EducationalDetailsState = {
   educationalDetails: {
     institueName: '',
     startDate: '',
@@ -21,7 +21,7 @@ export const initialState: EducationalDetailsState = {
 };
 
 export const educationalDetailsReducer = createReducer(
-  initialState,
+  initialEducationalState,
   on(EducationalDetailsActions.loadEducationalDetails, (state) => ({
     ...state,
     loading: true,

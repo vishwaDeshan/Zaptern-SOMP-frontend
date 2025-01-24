@@ -16,8 +16,12 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { SharedStateFeature } from '@zaptern-somp-frontend/shared-data-access';
 import { ApplicantEffects } from '@zaptern-somp-frontend/applicants-list';
 import { applicantFeature } from '@zaptern-somp-frontend/applicants-list';
-import { personalDetailsFeature } from '@zaptern-somp-frontend/data-access';
-import { PersonalDetailsEffects } from '@zaptern-somp-frontend/data-access';
+import {
+  personalDetailsFeature,
+  PersonalDetailsEffects,
+  educationalDetailsFeature,
+  EducationalDetailsEffects,
+} from '@zaptern-somp-frontend/data-access';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -31,8 +35,13 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     provideState(applicantFeature),
     provideState(SharedStateFeature),
+    provideState(educationalDetailsFeature),
     provideState(personalDetailsFeature),
-    provideEffects([ApplicantEffects, PersonalDetailsEffects]),
+    provideEffects([
+      ApplicantEffects,
+      PersonalDetailsEffects,
+      EducationalDetailsEffects,
+    ]),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

@@ -18,12 +18,12 @@ export const selectEducationalDetails = createSelector(
   (state: EducationalDetailsState) => state.educationalDetails
 );
 
-export const selectLoading = createSelector(
+export const selectEducatioanlDetailsLoading = createSelector(
   selectEducationalDetailsState,
   (state: EducationalDetailsState) => state.loading
 );
 
-export const selectError = createSelector(
+export const selectEducatioanlDetailsError = createSelector(
   selectEducationalDetailsState,
   (state: EducationalDetailsState) => state.error
 );
