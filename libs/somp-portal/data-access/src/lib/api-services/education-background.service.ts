@@ -12,7 +12,7 @@ export class EducationalDetailsService {
 
   getEducationalDetails(id: string): Observable<EducationBackgroundData> {
     return this.http.get<EducationBackgroundData>(
-      `${environment.apiUrl}/educationalDetails?Id=${id}`
+      `${environment.apiUrl}/getEducationalDetailsById?ApplicantId=${id}`
     );
   }
 
@@ -20,7 +20,7 @@ export class EducationalDetailsService {
     educationalDetails: EducationBackgroundData
   ): Observable<EducationBackgroundData> {
     return this.http.post<EducationBackgroundData>(
-      `${environment.apiUrl}/educationalDetails`,
+      `${environment.apiUrl}/addEducationalDetails`,
       educationalDetails
     );
   }
