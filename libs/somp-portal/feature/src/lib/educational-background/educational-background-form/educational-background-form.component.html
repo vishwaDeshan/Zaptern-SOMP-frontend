@@ -5,7 +5,10 @@
     </button>
   </div>
 
-  <somp-time-line [timelineData]="timelineData"></somp-time-line>
+  <somp-time-line
+    [timelineData]="timelineData"
+    (editEducationDetailsId)="(editEducationDetailsId)"
+  ></somp-time-line>
 
   <div class="modal-overlay" *ngIf="isModalOpen" (click)="closeModal()">
     <div class="modal-content" (click)="$event.stopPropagation()">

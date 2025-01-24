@@ -5,6 +5,15 @@
     width: 100%;
     margin-bottom: -80px;
   }
+  .header{
+    display: flex;
+    justify-content: space-between;
+
+    i{
+      float: right;
+      cursor: pointer;
+    }
+  }
   
   .box ul {
     list-style-type: none;

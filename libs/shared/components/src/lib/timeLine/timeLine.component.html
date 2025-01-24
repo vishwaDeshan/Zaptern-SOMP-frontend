@@ -2,7 +2,13 @@
   <ul>
     <li *ngFor="let item of timelineData">
       <span></span>
-      <div class="title">{{ item.title }}</div>
+      <div class="header">
+        <div class="title">{{ item.title }}</div>
+        <i
+          class="bi bi-pencil-square"
+          (click)="editEducationDetails(item.id)"
+        ></i>
+      </div>
       <div class="info">{{ item.description }}</div>
       <div class="time">
         <span>{{ item.dateRange.split('-')[0] }}</span>

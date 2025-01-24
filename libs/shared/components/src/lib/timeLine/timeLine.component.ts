@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { timelineData } from '@zaptern-somp-frontend/common/models';
 
@@ -11,4 +11,9 @@ import { timelineData } from '@zaptern-somp-frontend/common/models';
 })
 export class TimeLineComponent {
   @Input() timelineData: timelineData[] = [];
+  @Output() editEducationDetailsId = new EventEmitter<string>();
+
+  editEducationDetails(id: string) {
+    this.editEducationDetailsId.emit(id);
+  }
 }
