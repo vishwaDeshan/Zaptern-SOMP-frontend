@@ -19,7 +19,7 @@ export class ToolTopBarComponent implements OnChanges, OnInit {
   @Input() formSaved: boolean = false;
   @Input() showTopToolBar: boolean = false;
   @Input() pageTitle = '';
-  private minSavingDisplayMs = 100;
+  private minSavingDisplayMs = 500;
 
   saveStatus: string | null = null;
 
